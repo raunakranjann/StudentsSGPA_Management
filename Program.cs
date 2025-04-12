@@ -132,12 +132,12 @@ class Program
 
             using (StreamWriter writer = new StreamWriter(filePath))
             {
-                writer.WriteLine("Name\t\tRoll No\tReg No\t\tSem1\tSem2\tSem3\tAvg SGPA");
+                writer.WriteLine("Name\t\tRoll No\t\tReg No\t\tSem1\t\tSem2\t\tSem3\t\tAvg SGPA");
 
                 while (reader.Read())
                 {
-                    string line = $"{reader["name"]}\t{reader["roll_number"]}\t{reader["registration_number"]}\t" +
-                                  $"{reader["sem1_sgpa"]}\t{reader["sem2_sgpa"]}\t{reader["sem3_sgpa"]}\t" +
+                    string line = $"{reader["name"]}\t{reader["roll_number"]}\t\t{reader["registration_number"]}\t" +
+                                  $"{reader["sem1_sgpa"]}\t\t{reader["sem2_sgpa"]}\t\t{reader["sem3_sgpa"]}\t\t" +
                                   $"{Convert.ToDouble(reader["avg_sgpa"]):F2}";
 
                     writer.WriteLine(line);
@@ -164,12 +164,12 @@ class Program
             MySqlDataReader reader = cmd.ExecuteReader();
 
             Console.WriteLine("\n--- Stored Student Records ---");
-            Console.WriteLine("Name\tRoll No\tReg No\tSem1\tSem2\tSem3\tAvg SGPA");
+            Console.WriteLine("Name\t\tRoll No\t\tReg No\t\tSem1\t\tSem2\t\tSem3\t\tAvg SGPA");
 
             while (reader.Read())
             {
-                Console.WriteLine($"{reader["name"]}\t{reader["roll_number"]}\t{reader["registration_number"]}\t" +
-                                  $"{reader["sem1_sgpa"]}\t{reader["sem2_sgpa"]}\t{reader["sem3_sgpa"]}\t" +
+                Console.WriteLine($"{reader["name"]}\t{reader["roll_number"]}\t\t{reader["registration_number"]}\t" +
+                                  $"{reader["sem1_sgpa"]}\t\t{reader["sem2_sgpa"]}\t\t{reader["sem3_sgpa"]}\t\t" +
                                   $"{Convert.ToDouble(reader["avg_sgpa"]):F2}");
             }
 
