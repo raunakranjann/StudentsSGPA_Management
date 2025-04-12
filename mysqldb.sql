@@ -16,7 +16,7 @@ CREATE TABLE students (
 use studentdb;
 
 
-truncate table students;
+
 
 select *from students 
-where avg_sgpa>"7.8";
+where avg_sgpa>"5";
